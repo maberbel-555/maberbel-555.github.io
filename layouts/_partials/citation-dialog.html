@@ -1,0 +1,7 @@
+<dialog class="citation-dialog" id="citation-dialog" aria-labelledby="citation-heading" aria-describedby="citation-title">
+ <div class="dialog-header"><div><p class="eyebrow">Reference</p><h2 id="citation-heading">Cite this work</h2></div><button type="button" id="close-citation" class="icon-button" aria-label="Close citation">{{ partial "icon.html" "close" }}</button></div>
+ <p id="citation-title" class="citation-title"></p>
+ <div class="bibtex-code"><span class="code-label">BibTeX</span><pre id="bibtex-output" tabindex="0"></pre></div>
+ <div class="dialog-actions"><button type="button" class="primary-button" id="copy-citation">{{ partial "icon.html" "copy" }}<span>Copy citation</span></button><button type="button" class="secondary-button" id="download-citation">{{ partial "icon.html" "download" }}<span>Download .bib</span></button></div>
+ <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+</dialog>

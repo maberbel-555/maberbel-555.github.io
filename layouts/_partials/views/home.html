@@ -1,0 +1,22 @@
+{{ $p := .Site.Data.profile }}
+<section class="profile" aria-labelledby="profile-name">
+ <div class="profile-main">
+  <div class="profile-heading">
+   <p class="eyebrow">{{ $p.role }} <span aria-hidden="true">/</span> {{ $p.school }} &middot; Comillas</p>
+   <h1 id="profile-name">{{ $p.name }}</h1>
+   <p class="affiliation">{{ $p.department }}<br><a href="{{ $p.institution_url }}" target="_blank" rel="noopener noreferrer">{{ $p.institution }} {{ partial "icon.html" "external" }}</a></p>
+  </div>
+  <div class="profile-copy"><p class="intro">{{ $p.intro }}</p><p>{{ $p.about }}</p></div>
+ </div>
+ <figure class="profile-photo"><img src="{{ $p.photo | relURL }}" width="184" height="227" alt="{{ $p.photo_alt }}" fetchpriority="high"><figcaption>{{ partial "icon.html" "location" }}{{ $p.location }}</figcaption></figure>
+ <div class="profile-links" aria-label="Academic profiles and contact">
+  <a href="mailto:{{ $p.email }}">{{ partial "icon.html" "mail" }}<span>Email</span></a>
+  <a href="{{ $p.scholar_url }}" title="Search by author on Google Scholar; direct profile link pending" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "scholar" }}<span>Google Scholar</span></a>
+  <a href="{{ $p.orcid_url }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "orcid" }}<span>ORCID</span></a>
+  <a href="{{ $p.researchgate_url }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "researchgate" }}<span>ResearchGate</span></a>
+ </div>
+</section>
+<section class="research-summary" aria-labelledby="interest-heading">
+ <div><h2 id="interest-heading">Research interests</h2><a class="text-link" href="{{ "research.html" | relURL }}">Publications {{ partial "icon.html" "arrow" }}</a></div>
+ <div class="summary-copy"><p>{{ $p.interests }}</p><div class="keywords">{{ range $p.keywords }}<span>{{ . }}</span>{{ end }}</div></div>
+</section>

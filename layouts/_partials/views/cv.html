@@ -1,0 +1,8 @@
+{{ $c := .Site.Data.cv }}
+<header class="page-heading cv-heading"><div><p class="eyebrow">Academic background</p><h1>Curriculum vitae</h1></div><button class="print-button" type="button" data-print>{{ partial "icon.html" "print" }}<span>Print CV</span></button></header>
+<div class="print-identity"><strong>{{ .Site.Data.profile.name }}</strong><span>{{ .Site.Data.profile.email }}</span></div>
+<section class="cv-section"><h2>Academic positions</h2><div class="cv-entries">{{ range $c.positions }}<div class="cv-entry"><span class="cv-date">{{ .date }}</span><div><h3>{{ .title }}</h3><p>{{ .note }}</p></div></div>{{ end }}</div></section>
+<section class="cv-section"><h2>Education</h2><div class="cv-entries">{{ range $c.education }}<div class="cv-entry"><span class="cv-date">{{ .date }}</span><div><h3>{{ .title }}</h3><p>{{ .institution }}</p>{{ with .note }}<p class="thesis-title">{{ . }}</p>{{ end }}</div></div>{{ end }}</div></section>
+<section class="cv-section"><h2>Research visit</h2><div class="cv-entries">{{ range $c.visits }}<div class="cv-entry"><span class="cv-date">{{ .date }}</span><div><h3>{{ .title }}</h3><p>{{ .note }}</p></div></div>{{ end }}</div></section>
+<section class="cv-section"><h2>Selected distinctions</h2><div class="cv-entries">{{ range $c.distinctions }}<div class="cv-entry"><span class="cv-date">{{ .date }}</span><div><h3>{{ .title }}</h3><p>{{ .note }}</p></div></div>{{ end }}</div></section>
+<p class="language-note">{{ partial "icon.html" "globe" }}<span><span class="language-label">Languages</span>{{ range $i, $l := $c.languages }}{{ if $i }}<span aria-hidden="true"> &middot; </span>{{ end }}{{ $l.name }} <span class="language-level">({{ $l.level }})</span>{{ end }}</span></p>

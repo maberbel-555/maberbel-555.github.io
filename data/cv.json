@@ -1,0 +1,83 @@
+{
+  "positions": [
+    {
+      "date": "2023–present",
+      "title": "Universidad Pontificia Comillas · ICAI",
+      "note": "Department of Applied Mathematics"
+    },
+    {
+      "date": "2020–2023",
+      "title": "Universidad Complutense de Madrid",
+      "note": "Predoctoral researcher · FPU fellowship"
+    },
+    {
+      "date": "2018–2019",
+      "title": "Instituto de Ciencias Matemáticas (ICMAT)",
+      "note": "Predoctoral researcher · FPU fellowship"
+    },
+    {
+      "date": "2017–2018",
+      "title": "Instituto de Ciencias Matemáticas (ICMAT)",
+      "note": "Severo Ochoa research fellowship"
+    }
+  ],
+  "education": [
+    {
+      "date": "2023",
+      "title": "PhD in Mathematical Research",
+      "institution": "Universidad Complutense de Madrid",
+      "note": "Reduction by Stages in Field Theory. Supervisor: Marco Castrillón López."
+    },
+    {
+      "date": "2023",
+      "title": "Master’s in Teacher Training",
+      "institution": "Universidad Nacional de Educación a Distancia (UNED)",
+      "note": ""
+    },
+    {
+      "date": "2018",
+      "title": "MSc in Advanced Mathematics",
+      "institution": "Universidad Complutense de Madrid",
+      "note": ""
+    },
+    {
+      "date": "2017",
+      "title": "Double degree in Mathematics and Physics",
+      "institution": "Universidad Complutense de Madrid",
+      "note": ""
+    }
+  ],
+  "visits": [
+    {
+      "date": "2021",
+      "title": "École Normale Supérieure, Paris",
+      "note": "Laboratoire de Météorologie Dynamique · September–December"
+    }
+  ],
+  "distinctions": [
+    {
+      "date": "2018–2024",
+      "title": "Research sexenio",
+      "note": "Field 1 · Mathematics and Physics"
+    },
+    {
+      "date": "2017",
+      "title": "Best academic record award",
+      "note": "Double degree in Mathematics and Physics"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "native"
+    },
+    {
+      "name": "English",
+      "level": "C2"
+    },
+    {
+      "name": "French",
+      "level": "C1"
+    }
+  ]
+}

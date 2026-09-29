@@ -1,0 +1,8 @@
+<header class="page-heading"><p class="eyebrow">Academic activity</p><h1>Events</h1><p>Conferences, workshops and seminars.</p></header>
+<div class="event-list">
+{{ range sort .Site.Data.events "date" "desc" }}
+<article class="event"><div class="event-date">{{ .date_label }}</div><div class="event-content"><h2>{{ .title }}</h2><p class="event-name">{{ .event }}</p><p class="event-place">{{ partial "icon.html" "location" }}{{ .place }}</p>
+{{ if or .slides .url }}<div class="event-links">{{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "external" }}Event website</a>{{ end }}{{ with .slides }}<a href="{{ . | relURL }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "file" }}Slides</a>{{ end }}</div>{{ end }}
+</div></article>
+{{ end }}
+</div>

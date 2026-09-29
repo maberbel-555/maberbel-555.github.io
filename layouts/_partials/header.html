@@ -1,0 +1,10 @@
+<header class="site-header">
+ <div class="header-inner">
+  <a class="brand" href="{{ "index.html" | relURL }}" aria-label="{{ .Site.Data.profile.name }} home"><span class="brand-mark" aria-hidden="true">mb<span>.</span></span><span>{{ .Site.Data.profile.short_name }}</span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">{{ partial "icon.html" "menu" }}<span>Menu</span></button>
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+   {{ $current := .Params.view }}
+   {{ range .Site.Data.navigation }}<a href="{{ .file | relURL }}"{{ if eq $current .view }} aria-current="page"{{ end }}>{{ .label }}</a>{{ end }}
+  </nav>
+ </div>
+</header>

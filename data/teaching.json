@@ -1,0 +1,26 @@
+{
+  "intro": "I teach mathematics in engineering programmes at ICAI, Universidad Pontificia Comillas.",
+  "current": [
+    {
+      "title": "Computational Geometry",
+      "subtitle": "Geometría Computacional"
+    },
+    {
+      "title": "Calculus",
+      "subtitle": "Cálculo"
+    },
+    {
+      "title": "Mathematical Analysis and Vector Calculus",
+      "subtitle": "Análisis Matemático y Cálculo Vectorial"
+    }
+  ],
+  "former_intro": "Before joining Comillas, I taught at Universidad Complutense de Madrid. My courses there included:",
+  "former": [
+    "Differential Geometry and Applications",
+    "Elementary Topology",
+    "Linear Algebra",
+    "Calculus",
+    "Mathematical Methods"
+  ],
+  "materials": "Course materials are available to enrolled students through the university virtual campus."
+}

@@ -1,0 +1,5 @@
+{{ $t := .Site.Data.teaching }}
+<header class="page-heading"><p class="eyebrow">University teaching</p><h1>Teaching</h1><p>{{ $t.intro }}</p></header>
+<section class="teaching-present" aria-labelledby="comillas-teaching"><h2 id="comillas-teaching">ICAI <span>&middot; Universidad Pontificia Comillas</span></h2><div class="current-courses">{{ range $t.current }}<div class="current-course"><h3>{{ .title }}</h3><p>{{ .subtitle }}</p></div>{{ end }}</div></section>
+<section class="teaching-past" aria-label="Teaching at Universidad Complutense de Madrid"><p>{{ $t.former_intro }}</p><ul>{{ range $t.former }}<li>{{ . }}</li>{{ end }}</ul></section>
+<p class="materials-note">{{ partial "icon.html" "book" }}<span>{{ $t.materials }}</span></p>

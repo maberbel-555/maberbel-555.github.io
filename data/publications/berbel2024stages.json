@@ -1,0 +1,24 @@
+{
+  "key": "berbel2024stages",
+  "title": "Lagrangian Reduction by Stages in Field Theory",
+  "authors": [
+    {
+      "given": "Miguel Ángel",
+      "family": "Berbel"
+    },
+    {
+      "given": "Marco",
+      "family": "Castrillón López"
+    }
+  ],
+  "year": 2024,
+  "publication_type": "journal",
+  "selected": true,
+  "journal": "Annales Henri Poincaré",
+  "volume": "25",
+  "number": "",
+  "pages": "1511–1543",
+  "doi": "10.1007/s00023-023-01356-4",
+  "arxiv": "2007.14854",
+  "bibtex_override": ""
+}

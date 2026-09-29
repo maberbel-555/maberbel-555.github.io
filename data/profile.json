@@ -1,0 +1,25 @@
+{
+  "name": "Miguel Ángel Berbel",
+  "short_name": "M. Á. Berbel",
+  "role": "Mathematician",
+  "department": "Department of Applied Mathematics",
+  "institution": "Universidad Pontificia Comillas",
+  "school": "ICAI",
+  "institution_url": "https://web.comillas.edu/profesor/maberbel",
+  "intro": "I am a mathematician at Universidad Pontificia Comillas, working in geometric mechanics and classical field theory.",
+  "about": "I use differential geometry to study how symmetry simplifies mechanical and field-theoretic systems, and how solutions of the original problem can be reconstructed from the reduced description.",
+  "interests": "My research focuses on reduction by stages, the Lagrange–Poincaré and Poisson–Poincaré formalisms, and the geometry of principal and affine bundles. I am particularly interested in how different types of symmetry interact in the Lagrangian and Hamiltonian descriptions of field theory.",
+  "keywords": [
+    "Geometric mechanics",
+    "Classical field theory",
+    "Symmetry & reduction"
+  ],
+  "photo": "images/portrait.jpg",
+  "photo_alt": "Portrait photograph from the supplied academic CV",
+  "email": "maberbel@comillas.edu",
+  "location": "Madrid, Spain",
+  "scholar_url": "https://scholar.google.com/scholar?q=%22Miguel+%C3%81ngel+Berbel%22",
+  "orcid_url": "https://orcid.org/0000-0002-4269-9599",
+  "researchgate_url": "https://www.researchgate.net/profile/Miguel-Berbel",
+  "description": "Miguel Ángel Berbel: geometric mechanics, classical field theory and symmetry reduction. Research, publications, academic events, teaching and curriculum vitae."
+}

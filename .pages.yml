@@ -1,0 +1,353 @@
+# Pages CMS: edit content, not layouts.
+media:
+- name: images
+  label: Imágenes
+  input: static/images
+  output: images
+- name: documents
+  label: Diapositivas públicas
+  input: static/uploads
+  output: uploads
+content:
+- name: publications
+  label: Artículos
+  type: collection
+  path: data/publications
+  format: json
+  filename: '{fields.key}.json'
+  view:
+    fields:
+    - title
+    - year
+    - publication_type
+    - selected
+    primary: title
+    sort:
+    - year
+    - title
+    search:
+    - title
+    - journal
+    default:
+      sort: year
+      order: desc
+  fields:
+  - name: key
+    label: Clave BibTeX
+    type: string
+    required: true
+    description: 'Identificador estable, sin espacios. Ejemplo: berbel2026subgroup.'
+  - name: title
+    label: Título
+    type: string
+    required: true
+  - name: publication_type
+    label: Tipo
+    type: select
+    required: true
+    options:
+      values:
+      - name: journal
+        label: Journal article
+      - name: preprint
+        label: Preprint
+      - name: proceedings
+        label: Proceedings
+  - name: year
+    label: Año
+    type: number
+    required: true
+    options:
+      min: 1900
+      max: 2200
+  - name: authors
+    label: Autores (en el orden publicado)
+    type: object
+    list: true
+    fields:
+    - name: given
+      label: Nombre
+      type: string
+      required: true
+    - name: family
+      label: Apellido(s)
+      type: string
+      required: true
+  - name: selected
+    label: Mostrar en el filtro Selected
+    type: boolean
+    default: false
+  - name: journal
+    label: Revista o libro de actas
+    type: string
+  - name: volume
+    label: Volumen
+    type: string
+  - name: number
+    label: Número
+    type: string
+  - name: pages
+    label: Páginas o número de artículo
+    type: string
+  - name: doi
+    label: DOI
+    type: string
+    description: Solo el identificador, sin https://doi.org/.
+  - name: arxiv
+    label: arXiv
+    type: string
+    description: Conservar este campo al pasar de preprint a journal. Solo el identificador.
+  - name: bibtex_override
+    label: BibTeX del editor (opcional)
+    type: text
+    description: 'En blanco: se genera con los campos anteriores. Si pegas una cita, esta sustituye a la generada;
+      revísala cuando cambien los datos.'
+- name: events
+  label: Eventos
+  type: collection
+  path: data/events
+  format: json
+  filename: '{fields.date}-{primary}.json'
+  view:
+    fields:
+    - title
+    - event
+    - date
+    primary: title
+    sort:
+    - date
+    - title
+    search:
+    - title
+    - event
+    - place
+    default:
+      sort: date
+      order: desc
+  fields:
+  - name: title
+    label: Título de la contribución
+    type: string
+    required: true
+  - name: event
+    label: Evento
+    type: string
+    required: true
+  - name: place
+    label: Lugar
+    type: string
+  - name: date
+    label: Fecha para ordenar
+    type: string
+    required: true
+    description: Formato AAAA-MM-DD. No se muestra tal cual en la web.
+  - name: date_label
+    label: Fecha visible
+    type: string
+    required: true
+    description: 'Por ejemplo: 13–17 January 2025.'
+  - name: url
+    label: Web del evento (opcional)
+    type: string
+  - name: slides
+    label: Diapositivas (opcional)
+    type: file
+    options:
+      media: documents
+      extensions:
+      - pdf
+- name: profile
+  label: Portada y enlaces
+  type: file
+  path: data/profile.json
+  format: json
+  fields:
+  - name: name
+    label: Nombre público
+    type: string
+    required: true
+  - name: short_name
+    label: Nombre breve de la cabecera
+    type: string
+    required: false
+  - name: role
+    label: Actividad
+    type: string
+    required: false
+  - name: department
+    label: Departamento
+    type: string
+    required: false
+  - name: institution
+    label: Universidad
+    type: string
+    required: false
+  - name: school
+    label: Escuela
+    type: string
+    required: false
+  - name: institution_url
+    label: Perfil institucional
+    type: string
+    required: false
+  - name: intro
+    label: Presentación
+    type: text
+    required: true
+  - name: about
+    label: Sobre la investigación
+    type: text
+    required: false
+  - name: interests
+    label: Líneas de investigación
+    type: text
+    required: false
+  - name: keywords
+    label: Palabras clave
+    type: string
+    list: true
+  - name: photo
+    label: Fotografía
+    type: image
+    options:
+      media: images
+      extensions:
+      - jpg
+      - jpeg
+      - png
+      - webp
+    required: true
+  - name: photo_alt
+    label: Texto alternativo de la foto
+    type: string
+    required: false
+  - name: email
+    label: Correo profesional
+    type: string
+    required: true
+  - name: location
+    label: Localización pública
+    type: string
+    required: false
+  - name: scholar_url
+    label: Google Scholar
+    type: string
+    required: false
+  - name: orcid_url
+    label: ORCID
+    type: string
+    required: false
+  - name: researchgate_url
+    label: ResearchGate
+    type: string
+    required: false
+  - name: description
+    label: Descripción para buscadores
+    type: text
+    required: false
+- name: teaching
+  label: Docencia
+  type: file
+  path: data/teaching.json
+  format: json
+  fields:
+  - name: intro
+    label: Introducción
+    type: text
+  - name: current
+    label: Asignaturas en Comillas
+    type: object
+    list: true
+    fields:
+    - name: title
+      label: Nombre en inglés
+      type: string
+    - name: subtitle
+      label: Nombre original
+      type: string
+  - name: former_intro
+    label: Introducción a la docencia anterior
+    type: text
+  - name: former
+    label: Asignaturas anteriores
+    type: string
+    list: true
+  - name: materials
+    label: Nota sobre materiales
+    type: text
+- name: cv
+  label: Curriculum vitae
+  type: file
+  path: data/cv.json
+  format: json
+  fields:
+  - name: positions
+    label: Puestos académicos
+    type: object
+    list: true
+    fields:
+    - name: date
+      label: Fecha
+      type: string
+    - name: title
+      label: Institución
+      type: string
+    - name: note
+      label: Descripción
+      type: string
+  - name: education
+    label: Formación
+    type: object
+    list: true
+    fields:
+    - name: date
+      label: Año
+      type: string
+    - name: title
+      label: Titulación
+      type: string
+    - name: institution
+      label: Institución
+      type: string
+    - name: note
+      label: Nota (opcional)
+      type: string
+  - name: visits
+    label: Estancias
+    type: object
+    list: true
+    fields:
+    - name: date
+      label: Fecha
+      type: string
+    - name: title
+      label: Institución
+      type: string
+    - name: note
+      label: Descripción
+      type: string
+  - name: distinctions
+    label: Distinciones
+    type: object
+    list: true
+    fields:
+    - name: date
+      label: Fecha
+      type: string
+    - name: title
+      label: Distinción
+      type: string
+    - name: note
+      label: Descripción
+      type: string
+  - name: languages
+    label: Idiomas
+    type: object
+    list: true
+    fields:
+    - name: name
+      label: Idioma
+      type: string
+    - name: level
+      label: Nivel
+      type: string

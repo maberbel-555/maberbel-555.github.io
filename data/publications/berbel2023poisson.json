@@ -1,0 +1,24 @@
+{
+  "key": "berbel2023poisson",
+  "title": "Poisson–Poincaré reduction for field theories",
+  "authors": [
+    {
+      "given": "Miguel Ángel",
+      "family": "Berbel"
+    },
+    {
+      "given": "Marco",
+      "family": "Castrillón López"
+    }
+  ],
+  "year": 2023,
+  "publication_type": "journal",
+  "selected": false,
+  "journal": "Journal of Geometry and Physics",
+  "volume": "191",
+  "number": "",
+  "pages": "104879",
+  "doi": "10.1016/j.geomphys.2023.104879",
+  "arxiv": "2210.14732",
+  "bibtex_override": ""
+}

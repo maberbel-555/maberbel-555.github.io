@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Home",
+    "view": "home",
+    "file": "index.html"
+  },
+  {
+    "label": "Research",
+    "view": "research",
+    "file": "research.html"
+  },
+  {
+    "label": "Events",
+    "view": "events",
+    "file": "events.html"
+  },
+  {
+    "label": "Teaching",
+    "view": "teaching",
+    "file": "teaching.html"
+  },
+  {
+    "label": "CV",
+    "view": "cv",
+    "file": "cv.html"
+  }
+]

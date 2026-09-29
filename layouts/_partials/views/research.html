@@ -1,0 +1,27 @@
+<header class="page-heading"><p class="eyebrow">Publications &amp; preprints</p><h1>Research</h1><p>Geometric mechanics, classical field theory and symmetry reduction.</p></header>
+<div class="research-controls" aria-label="Publication filters">
+ <div class="type-filters" role="group" aria-label="Publication type">
+  <button type="button" data-filter="all" aria-pressed="true">All work</button>
+  <button type="button" data-filter="journal" aria-pressed="false">Journal articles</button>
+  <button type="button" data-filter="preprint" aria-pressed="false">Preprints</button>
+  <button type="button" data-filter="proceedings" aria-pressed="false">Proceedings</button>
+ </div>
+ <button type="button" class="selected-filter" id="selected-filter" aria-pressed="false">{{ partial "icon.html" "star" }}<span>Selected</span></button>
+</div>
+<div class="papers" id="papers">
+{{ range sort .Site.Data.publications "year" "desc" }}
+<article class="paper" data-type="{{ .publication_type }}" data-selected="{{ .selected }}" id="{{ .key }}">
+ <h2>{{ .title }}</h2>
+ <p class="authors">{{ range $i, $a := .authors }}{{ if $i }}<span aria-hidden="true"> &middot; </span>{{ end }}{{ $a.given }} {{ $a.family }}{{ end }}</p>
+ <p class="venue">{{ if .journal }}<span class="journal-name">{{ .journal }}</span>{{ with .volume }} <span>{{ . }}</span>{{ end }}{{ with .number }}<span>({{ . }})</span>{{ end }}{{ with .pages }}<span>, {{ . }}</span>{{ end }}{{ else }}<span class="preprint-label">Preprint</span>{{ end }}<span class="venue-dot" aria-hidden="true"> &middot; </span><span class="pub-year">{{ .year }}</span></p>
+ <div class="paper-links">
+  {{ with .doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "doi" }}DOI</a>{{ end }}
+  {{ with .arxiv }}<a href="https://arxiv.org/abs/{{ . }}" target="_blank" rel="noopener noreferrer">{{ partial "icon.html" "arxiv" }}arXiv</a>{{ end }}
+  <button class="cite-button" type="button" data-cite="{{ .key }}" aria-haspopup="dialog" aria-label="Show BibTeX citation for {{ .title }}">{{ partial "icon.html" "code" }}BibTeX</button>
+ </div>
+</article>
+{{ end }}
+</div>
+<p id="filter-empty" class="empty-state" hidden>No publications match this combination. <button type="button" id="reset-filters">Clear filters</button></p>
+<p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+<noscript><p class="small-note">All publications are shown. Enable JavaScript to use the filters and BibTeX tools.</p></noscript>

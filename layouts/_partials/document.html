@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>{{ if not .IsHome }}{{ .Title }} &middot; {{ end }}{{ .Site.Data.profile.name }}</title>
+<meta name="description" content="{{ .Site.Data.profile.description }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Site.Data.profile.description }}">
+<meta property="og:type" content="website">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" data-font-service>
+<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="{{ .Params.view }}">
+<a class="skip-link" href="#main">Skip to content</a>
+{{ partial "header.html" . }}
+<main id="main" class="page-shell page-{{ .Params.view }}" tabindex="-1">
+{{ partial (printf "views/%s.html" .Params.view) . }}
+</main>
+{{ partial "footer.html" . }}
+{{ if eq .Params.view "research" }}
+{{ partial "citation-dialog.html" . }}
+<script id="publication-data" type="application/json">{{ .Site.Data.publications | jsonify | safeJS }}</script>
+{{ end }}
+<script src="{{ "site.js" | relURL }}" defer></script>
+</body>
+</html>

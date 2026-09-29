@@ -1,0 +1,28 @@
+{
+  "key": "berbel2017cosine",
+  "title": "Goos–Hänchen shift of Cosine-Gaussian Schell-model beams with rectangular symmetry",
+  "authors": [
+    {
+      "given": "Miguel Ángel",
+      "family": "Berbel"
+    },
+    {
+      "given": "Alejandro",
+      "family": "Cunillera Pérez"
+    },
+    {
+      "given": "Rosario",
+      "family": "Martínez Herrero"
+    }
+  ],
+  "year": 2017,
+  "publication_type": "proceedings",
+  "selected": false,
+  "journal": "Proceedings of SPIE",
+  "volume": "10453",
+  "number": "",
+  "pages": "104530C",
+  "doi": "10.1117/12.2271487",
+  "arxiv": "",
+  "bibtex_override": ""
+}

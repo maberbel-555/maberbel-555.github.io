@@ -1,0 +1,24 @@
+{
+  "key": "berbel2022category",
+  "title": "Reduction (by stages) in the whole Lagrange–Poincaré category",
+  "authors": [
+    {
+      "given": "Miguel Ángel",
+      "family": "Berbel"
+    },
+    {
+      "given": "Marco",
+      "family": "Castrillón López"
+    }
+  ],
+  "year": 2022,
+  "publication_type": "journal",
+  "selected": false,
+  "journal": "Advances in Theoretical and Mathematical Physics",
+  "volume": "26",
+  "number": "8",
+  "pages": "2497–2539",
+  "doi": "10.4310/ATMP.2022.v26.n8.a2",
+  "arxiv": "1912.10763",
+  "bibtex_override": ""
+}
